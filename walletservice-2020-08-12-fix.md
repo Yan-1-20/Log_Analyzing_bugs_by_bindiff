@@ -42,5 +42,6 @@ msdn 显示SysAllocString 是分配一个新string, 并把 参数 psz 拷贝到�
 ![](image/2020-08-19-1.png)
 
 所以理论上开一个线程，调用 Wallet::WalletCustomProperty::SetValue 不断的写入一长一短两个字符串。
+同时开另一个线程 调用 Wallet::WalletCustomProperty::GetValue 不断的获取字符串。
 那么就有可能触发该漏洞。
 
